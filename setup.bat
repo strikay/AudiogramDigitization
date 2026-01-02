@@ -23,7 +23,9 @@ call environment\Scripts\activate.bat
 
 REM Install dependencies
 echo Installing dependencies...
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip --user 2>nul || (
+    echo Note: pip upgrade failed, continuing with current version...
+)
 pip install -r requirements.txt
 
 echo.

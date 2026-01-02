@@ -94,6 +94,29 @@ Use GPU acceleration (if available):
 
 ## Troubleshooting
 
+### Windows Permission Errors
+
+If you encounter `[WinError 5] Access is denied` when running `setup.bat`, this is typically a pyenv or system permission issue:
+
+**Solution 1: Skip pip upgrade (Recommended)**
+The setup script now automatically handles this. If pip upgrade fails, it continues with the current version.
+
+**Solution 2: Manual setup without pip upgrade**
+```cmd
+python -m venv environment
+environment\Scripts\activate.bat
+pip install -r requirements.txt
+```
+
+**Solution 3: Run as Administrator**
+Right-click Command Prompt and select "Run as administrator", then run `setup.bat`
+
+**Solution 4: Use --user flag**
+If manually installing, you can use:
+```cmd
+pip install --user -r requirements.txt
+```
+
 ### Import Errors
 
 If you get import errors, make sure your virtual environment is activated:
