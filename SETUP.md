@@ -94,6 +94,30 @@ Use GPU acceleration (if available):
 
 ## Troubleshooting
 
+### NumPy Version Compatibility
+
+If you see an error like "A module that was compiled using NumPy 1.x cannot be run in NumPy 2.0.2":
+
+**Solution: The requirements.txt now pins NumPy to <2.0.0 for compatibility**
+
+If you already installed with NumPy 2.x, reinstall dependencies:
+```bash
+# Activate your environment first
+pip uninstall numpy -y
+pip install -r requirements.txt
+```
+
+Or start fresh:
+```bash
+# Delete the old environment
+rm -rf environment  # Linux/macOS
+# or
+rmdir /s environment  # Windows
+
+# Re-run setup
+./setup.sh  # or setup.bat on Windows
+```
+
 ### Windows Permission Errors
 
 If you encounter `[WinError 5] Access is denied` when running `setup.bat`, this is typically a pyenv or system permission issue:
