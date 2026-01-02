@@ -1,0 +1,20 @@
+# Directories
+**/__pycache__
+**/environment
+**/node_modules
+**/runs
+**/temp
+**/slurm*
+**/database
+**/release/build
+.git
+.github
+
+# Junk files
+.DS_Store
+*.pyc
+*.pyo
+*.pyd
+
+# Secret files
+.env

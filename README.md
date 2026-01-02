@@ -26,13 +26,28 @@ needed for the computer to comprehend the audiogram.
 - Demo: https://huggingface.co/spaces/weiren119/AudiogramDigitization
 ## Audiogram digitization algorithm
 
-We recommend using Python 3.9 to run the algorithm as this is the version that we
-tested.
+We recommend using Python 3.9 or higher to run the algorithm. Python 3.7-3.11 should work with the updated dependencies.
 
 Before using any of this software, you must install the dependencies in a virtual environment
 and activate that virtual environment.
 
-To set up the virtual environment:
+### Quick Setup (Recommended)
+
+You can use the automated setup script:
+
+On macOS/Linux:
+```
+$ ./setup.sh
+```
+
+On Windows:
+```
+C:\> setup.bat
+```
+
+### Manual Setup
+
+Alternatively, to set up the virtual environment manually:
 
 ```
 $ python3 -m venv environment
@@ -41,8 +56,7 @@ $ pip3 install -r requirements.txt
 ```
 
 This will create the virtual environment in the directory `environment`. This only
-needs to be done once. (If you are warned that the versions of torch or torchvision are not
-available, then, perhaps you are not using Python 3.9.)
+needs to be done once.
 
 Then, to run any command, you must ensure that this environment is activated
 by running (on macOS/Linux):
@@ -57,9 +71,6 @@ or on Windows
 C:\> environment\Scripts\activate.bat
 ```
 
-⚠️⚠️⚠️⚠️⚠️⚠️
-**Important:** You will need to fix a bug in the torch library by changing `F.hardswish(input, self.inplace)` to `F.hardswish(input)` in `environment/lib/python3.9/site-packages/torch/nn/modules/activation.py`.
-⚠️⚠️⚠️⚠️⚠️⚠️
 ## Running the digitizer (in the console)
 
 To run the digitizer, do:

@@ -1,4 +1,5 @@
 matplotlib
+numpy<2.0.0
 pandas
 Pillow
 pytesseract
@@ -6,8 +7,8 @@ PyYAML
 requests
 scipy
 toml
-torch==1.9.0
-torchvision==0.10.0
+torch>=2.2.0
+torchvision>=0.17.0
 tqdm
 typed-ast
 typing-extensions
